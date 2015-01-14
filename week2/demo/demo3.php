@@ -14,7 +14,7 @@
             
             echo $my_var3;
             
-            $my_var1 .= ' world';
+            $my_var1 .= ' world'; // $my_var1 = $my_var1 .' world';
             $my_var1 .= ' works';
             
             echo '<p>', $my_var1, '</p>';
