@@ -6,6 +6,7 @@
     </head>
     <body>
         <?php
+            $my_var = '';
             $my_float = 10.556;
             $my_string = 'string';
             $my_bool = false;
