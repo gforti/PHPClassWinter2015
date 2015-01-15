@@ -6,11 +6,22 @@
     </head>
     <body>
         <?php
-        
-            if ( empty ( $_POST ) ) {
-                echo 'post is empty';
-            } else {
-                echo 'post is not empty';
+           $name = '';
+           $email = '';
+           $num = 0;           
+           $err_msg = '';
+           
+            if ( !empty ( $_POST ) ) {             
+         
+                $name = $_POST['fname'];
+                $email = $_POST['email'];
+                $num = $_POST['number'];
+                
+                if ( !is_string($name) || empty($name) ) {
+                    $err_msg .= '<p>Please enter a name</p>';
+                }
+                
+                
             }
         
         ?>
