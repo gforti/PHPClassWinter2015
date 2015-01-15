@@ -19,7 +19,9 @@
             
             echo '<p>', $my_var1, '</p>';
             
-            
+            /*
+             * use a period to concat two variables together
+             */
             
             $err_msgs = '';
             

@@ -8,10 +8,19 @@
         
         <?php
         
+            /*
+             * The $_POST super global variable works like the GET
+             * but with html forms.
+             * you access the $_POST variable like so
+             * $_POST['fname']
+             * it is important that the input fields in the html form
+             * have a name attribute that you are trying to access
+             */
             $email = '';
             $fname = '';
             $number = '';
             
+            // a trick to get the post value if a post is made.
             if ( !empty ( $_POST ) ) { 
                 $fname = $_POST['fname'];
                 $email = $_POST['email'];
