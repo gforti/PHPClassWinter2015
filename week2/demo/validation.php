@@ -21,6 +21,14 @@
                     $err_msg .= '<p>Please enter a name</p>';
                 }
                 
+                if ( !is_string($email) || empty($email) ) {
+                    $err_msg .= '<p>Please enter an email</p>';
+                }
+                
+                if ( !is_numeric($num) || empty($num) ) {
+                    $err_msg .= '<p>Please enter a number</p>';
+                }
+                
                 
             }
         
