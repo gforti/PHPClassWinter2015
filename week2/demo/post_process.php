@@ -15,6 +15,10 @@
              if ( isset($_POST['email'] ) ) {
                 echo $_POST['email'];
             }
+            
+            
+            include './validation.php';
+            
         
         ?>
     </body>
