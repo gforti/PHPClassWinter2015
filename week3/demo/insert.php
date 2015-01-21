@@ -8,7 +8,7 @@
 <?php
     $db = new PDO("mysql:host=localhost;dbname=phpclasswinter2015", "root", "");
   
-    $dbs = $db->prepare('update demo set name = :name, email = :email');  
+    $dbs = $db->prepare('insert demo set name = :name, email = :email');  
     
     $name = 'test';
     $email = 'test@test.com';
