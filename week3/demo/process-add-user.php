@@ -8,6 +8,7 @@
         <?php
         // put your code here
         
+        // do error handling before you continue
             $err_msg = '';
             if ( empty($_POST) ) {
                $err_msg = 'Please enter Data';
@@ -21,13 +22,16 @@
   
             $dbs = $db->prepare('insert demo set name = :name, email = :email');  
 
+            //collect the data to bind
             $name = $_POST['fullname'];
             $email = $_POST['email'];
 
+            // you must bind the data before you execute
             $dbs->bindParam(':name', $name, PDO::PARAM_STR);
             $dbs->bindParam(':email', $email, PDO::PARAM_STR);
 
-
+            
+            // if the execute works, then you will see the sucess message
             if ( $dbs->execute() && $dbs->rowCount() > 0 ) {
                     echo '<h1> user ',$name, ' was added</h1>';
             } else {
