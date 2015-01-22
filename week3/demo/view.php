@@ -30,6 +30,7 @@ $db = new PDO("mysql:host=localhost;dbname=phpclasswinter2015; port=3308;", "roo
         foreach ($results as $value) {
             
             echo '<li>', $value["name"], '</li>';
+            // hint: the email column can also be displayed
         }
         echo '</ul>';
         
