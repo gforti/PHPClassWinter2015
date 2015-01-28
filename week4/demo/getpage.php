@@ -9,7 +9,7 @@
         // put your code here
         
         $page = filter_input(INPUT_GET, 'page');        
-        $page = intval($page);
+        $page = intval($page)+1;
         
         $view = filter_input(INPUT_GET, 'view');
         
@@ -18,7 +18,7 @@
         ?>
         
         
-        <a href="?page=1&view=images">View Images</a>
+        <a href="?page=<?php echo $page; ?>&view=images">View Images</a>
         
         
     </body>
