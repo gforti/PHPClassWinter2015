@@ -8,7 +8,9 @@
         <?php
         // put your code here
         
-        $page = filter_input(INPUT_GET, 'page');
+        $page = filter_input(INPUT_GET, 'page');        
+        $page = intval($page);
+        
         $view = filter_input(INPUT_GET, 'view');
         
         echo '<h1>', $view, ' - ', $page, '</h1>';
