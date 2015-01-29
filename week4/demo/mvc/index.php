@@ -12,6 +12,8 @@
     } else if( $view == 'details' ) {
         include_once './models/getdetail.php';
         include_once './views/details.php';
+    } else {
+        echo '<h2>Home</h2>';
     }
     
     
