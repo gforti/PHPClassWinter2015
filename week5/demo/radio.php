@@ -15,9 +15,27 @@
         ?>
         
 <form action="#" method="post">   
-    ford <input type="radio" name="cars" value="ford" /> <br />
-    kia <input type="radio" name="cars" value="kia" /> <br />
-    honda <input type="radio" name="cars" value="honda" /> <br />
+    ford <input type="radio" name="cars" value="ford"
+               <?php
+               if ( $car == 'ford' ) {
+                   echo $checked;
+               }
+               ?>
+                /> <br />
+    kia <input type="radio" name="cars" value="kia" 
+               <?php
+               if ( $car == 'kia' ) {
+                   echo $checked;
+               }
+               ?>
+               /> <br />
+    honda <input type="radio" name="cars" value="honda" 
+                 <?php
+               if ( $car == 'honda' ) {
+                   echo $checked;
+               }
+               ?>
+                 /> <br />
             
 <br /><input type="submit" value="Submit" />
 </form>
