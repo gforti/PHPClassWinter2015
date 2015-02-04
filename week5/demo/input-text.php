@@ -7,13 +7,22 @@
     <body>
         <?php        
             $fname = filter_input(INPUT_POST, 'fname');
-            var_dump($fname);
+            $email = filter_input(INPUT_POST, 'email');
+            $hidden = filter_input(INPUT_POST, 'hidden');
+            
+            if ( empty($hidden) ) {
+                $hidden = 'i am hidden';
+            }
+            
+            //var_dump($fname);
         ?>
         
-        <form action="#" method="post">            
-            Full name <input type="text" name="fname" value="" /> <br />            
-            <input type="submit" value="Submit" />
-        </form>
+<form action="#" method="post">            
+    Full name <input type="text" name="fname" value="<?php echo $fname; ?>" /> <br />            
+    email <input type="email" name="email" value="<?php echo $email; ?>" /> <br />            
+    <input type="hidden" name="hidden" value="<?php echo $hidden; ?>" /> <br />            
+    <input type="submit" value="Submit" />
+</form>
         
     </body>
 </html>
