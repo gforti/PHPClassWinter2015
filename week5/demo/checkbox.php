@@ -20,9 +20,28 @@
         
 <form action="#" method="post">
         
-1. pep <input type="checkbox" name="pep" /> <br />
-2. mush <input type="checkbox" name="mush" /> <br />
-3. olv <input type="checkbox" name="olv" /> <br />
+1. pep <input type="checkbox" name="pep"
+               <?php
+               if ( $pep == 'on' ) {
+                   echo $checked;
+               }
+               ?>              
+              /> <br />
+2. mush <input type="checkbox" name="mush"
+                <?php
+               if ( $mush == 'on' ) {
+                   echo $checked;
+               }
+               ?>
+               /> <br />
+3. olv <input type="checkbox" name="olv"
+               <?php
+               if ( $olv == 'on' ) {
+                   echo $checked;
+               }
+               ?>
+              
+              /> <br />
             
 <br /><input type="submit" value="Submit" />
 </form>
