@@ -15,7 +15,7 @@
         
         <form action="#" method="post">
             
-           Passcode: <input type="password" value="" />
+           Passcode: <input type="password" name="pass" value="" />
             
             <input type="submit" value="submit" />
             
