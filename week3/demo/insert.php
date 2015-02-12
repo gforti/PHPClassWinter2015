@@ -8,7 +8,7 @@
 <?php
     $db = new PDO("mysql:host=localhost;dbname=phpclasswinter2015; port=3308;", "root", "");
   
-    $dbs = $db->prepare('insert demo set name = :name, email = :email');  
+    $dbs = $db->prepare('insert into demo set name = :name, email = :email');  
     
     $name = 'test';
     $email = 'test@test.com';
@@ -21,6 +21,7 @@
             echo '<h1> user was added</h1>';
     } else {
          echo '<h1> user <strong>NOT</strong> added</h1>';
+         var_dump($db->errorInfo());
     }
     
     
