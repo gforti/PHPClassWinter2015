@@ -17,10 +17,8 @@
                         echo '<h1> Email was found</h1>';
                 } else {
                      echo '<h1> Email <strong>NOT</strong> Found</h1>';
-                }
-                
-            }
-        
+                }                
+            }        
         ?>
         
           <form action="#" method="post">            
