@@ -8,6 +8,15 @@
         <?php
             $states = array();
             $states["RI"] = 'Rhode Island';
+            
+            
+            echo '<select>';
+            foreach ($states as $key => $value) {
+                echo '<option value=""></option>';
+            }
+            
+             echo '</select>';
+            
         ?>
     </body>
 </html>
