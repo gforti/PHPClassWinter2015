@@ -6,9 +6,13 @@
     </head>
     <body>
         
-        <form action="#">
+        <form action="#" method="post">
         
         <?php
+        
+            var_dump($_POST);        
+            $selectedState = filter_input(INPUT_POST, 'states');
+        
             $states = array('one', 'two', 'three');
             
             $states["RI"] = 'Rhode Island';
@@ -79,7 +83,7 @@
 
             //shuffle($states);
            // sort($states);
-            echo '<select>';
+            echo '<select name="states">';
             foreach ($states as $key => $value) {                
                 echo '<option value="',$key,'" selected="selected">',$value,'</option>';
             }
