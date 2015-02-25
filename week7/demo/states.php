@@ -80,8 +80,8 @@
             //shuffle($states);
            // sort($states);
             echo '<select>';
-            foreach ($states as $key => $value) {
-                echo '<option value="',$key,'">',$value,'</option>';
+            foreach ($states as $key => $value) {                
+                echo '<option value="',$key,'" selected="selected">',$value,'</option>';
             }
             
              echo '</select>';
