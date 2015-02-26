@@ -7,7 +7,10 @@
     <body>
         <?php
         // put your code here
-        
+        /*
+         * A hash is a one way encryption.  Used for
+         * passwords 
+         */
         
             if ( !empty($_POST) ) {
                 
