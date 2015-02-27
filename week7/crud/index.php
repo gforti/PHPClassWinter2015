@@ -1,9 +1,12 @@
 <?php
-
     include './functions.php';
+    
     $error_msgs = array();
+    $sucess_msg = '';
+    
     $fullname = '';
     $email = '';
+    $phone = '';
     $comments = '';
     
     if ( !empty($_POST) ) {
@@ -11,6 +14,7 @@
         $fullname = filter_input(INPUT_POST, 'fullname');
         $email = filter_input(INPUT_POST, 'email');
         $comments = filter_input(INPUT_POST, 'comments');
+        $phone = filter_input(INPUT_POST, 'phone');
         
         
         if ( !emailIsValid($email) ) {
@@ -21,21 +25,26 @@
             $error_msgs[] = 'Please enter your name.';
         }
         
+        if ( !phoneIsValid($phone) ) {
+            $error_msgs[] = 'Please enter your Phone number.';
+        }
+        
         
         if ( count($error_msgs) == 0 ) {
             //add to database
             
-            if ( addNewComments($fullname, $email, $comments ) ) {
-                
+            $addedComments = addNewComments($fullname, $email, $comments, $phone );
+            
+            if ( $addedComments === true  ) {
+                $sucess_msg = 'Comments were added.';
+            } else {
+                $error_msgs[] = 'Comments were NOT added.';
             }
         }
         
         
     }
     
-    
-    
-
 ?>
 
 <!DOCTYPE html>
@@ -52,6 +61,12 @@
             ?>
         </div>
         
+        <div>
+            <?php 
+                displaySucessMsg($sucess_msg);
+            ?>
+        </div>
+        
         <form action="#" method="post">
             <fieldset>
                 <legend><h2>Add Comments</h2></legend>
@@ -62,6 +77,11 @@
                 <p>
                     <label>Name:</label>
                     <input type="text" name="fullname" value="<?php echo $fullname; ?>" />
+                </p>
+                
+                 <p>
+                    <label>Phone:</label>
+                    <input type="text" name="phone" value="<?php echo $phone; ?>" />
                 </p>
                 <p>Comments: (optional)</p>
                 <textarea name="comments" rows="4" cols="50"><?php echo $comments; ?></textarea>
