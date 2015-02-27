@@ -24,6 +24,23 @@
         
         if ( count($error_msgs) == 0 ) {
             //add to database
+            
+            // remember to change the port
+            $db = new PDO("mysql:host=localhost;dbname=phpclasswinter2015; port=3308;", "root", "");
+            $dbs = $db->prepare('insert into comments set name = :name, email = :email, comments =:comments'); 
+            
+            // you must bind the data before you execute
+            $dbs->bindParam(':name', $fullname, PDO::PARAM_STR);
+            $dbs->bindParam(':email', $email, PDO::PARAM_STR);
+            $dbs->bindParam(':comments', $comments, PDO::PARAM_STR);
+            
+            
+             if ( $dbs->execute() && $dbs->rowCount() > 0 ) {
+                echo '<h1> user  was added</h1>';
+            } else {
+                echo '<h1> user was <strong>NOT</strong> added</h1>';
+            }     
+            
         }
         
         
