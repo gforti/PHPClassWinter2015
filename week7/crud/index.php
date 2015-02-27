@@ -37,12 +37,8 @@
     <body>    
         
         <div class="error_message">
-            <?php
-            
-                if ( count($error_msgs) > 0 ) {
-                    echo $error_msgs[0];
-                }
-            
+            <?php            
+                displayErrorMsgs($error_msgs);            
             ?>
         </div>
         
