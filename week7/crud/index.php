@@ -1,3 +1,21 @@
+<?php
+
+    $error_msgs = array();
+    
+    if ( !empty($_POST) ) {
+        
+        $fullname = filter_input(INPUT_POST, 'fullname');
+        $email = filter_input(INPUT_POST, 'email');
+        $comments = filter_input(INPUT_POST, 'comments');
+        
+        
+    }
+    
+
+
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>

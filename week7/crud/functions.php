@@ -9,10 +9,18 @@ function emailIsValid( $email ) {
 }
 
 function fullNameIsValid( $name ) {
-    
+    if ( !empty($name) ) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 
 function commentsIsValid( $comments ) {
-    
+     if ( !empty($comments) ) {
+        return true;
+    } else {
+        return false;
+    }
 }
