@@ -33,3 +33,22 @@ function displayErrorMsgs( $error_msgs ) {
         }                    
     }
 }
+
+
+function addNewComments($fullname,$email,$comments) {
+    // remember to change the port
+    $db = new PDO("mysql:host=localhost;dbname=phpclasswinter2015; port=3308;", "root", "");
+    $dbs = $db->prepare('insert into comments set name = :name, email = :email, comments =:comments'); 
+
+    // you must bind the data before you execute
+    $dbs->bindParam(':name', $fullname, PDO::PARAM_STR);
+    $dbs->bindParam(':email', $email, PDO::PARAM_STR);
+    $dbs->bindParam(':comments', $comments, PDO::PARAM_STR);
+
+    // When you execute remember that a rowcount means a change was made
+     if ( $dbs->execute() && $dbs->rowCount() > 0 ) {
+        return true;
+    } else {
+        return false;
+    }     
+}
