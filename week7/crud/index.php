@@ -1,6 +1,9 @@
 <?php
 
     $error_msgs = array();
+    $fullname = '';
+    $email = '';
+    $comments = '';
     
     if ( !empty($_POST) ) {
         
@@ -28,14 +31,14 @@
                 <legend><h2>Add Comments</h2></legend>
                 <p>
                     <label>E-Mail:</label>
-                    <input type="text" name="email" value="" />
+                    <input type="text" name="email" value="<?php echo $email; ?>" />
                 </p>
                 <p>
                     <label>Name:</label>
-                    <input type="text" name="fullname" value="" />
+                    <input type="text" name="fullname" value="<?php echo $fullname; ?>" />
                 </p>
                 <p>Comments: (optional)</p>
-                <textarea name="comments" rows="4" cols="50"></textarea>
+                <textarea name="comments" rows="4" cols="50"><?php echo $comments; ?></textarea>
 
                 <p> <input type="submit" value="Submit" /> </p>
             </fieldset>
