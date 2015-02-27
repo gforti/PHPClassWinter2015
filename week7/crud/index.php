@@ -21,10 +21,16 @@
             $error_msgs[] = 'Please enter your name.';
         }
         
+        
+        if ( count($error_msgs) == 0 ) {
+            //add to database
+        }
+        
+        
     }
     
     
-
+    
 
 ?>
 
