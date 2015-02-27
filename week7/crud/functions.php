@@ -27,7 +27,7 @@ function commentsIsValid( $comments ) {
 
 
 function displayErrorMsgs( $error_msgs ) {
-     if ( count($error_msgs) > 0 ) {
+     if ( is_array($error_msgs) && count($error_msgs) > 0 ) {
         foreach ($error_msgs as $err) {
           echo '<p>', $err, '</p>'; 
         }                    
