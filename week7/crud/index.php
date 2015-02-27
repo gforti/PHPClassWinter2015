@@ -14,13 +14,16 @@
         
         
         if ( !emailIsValid($email) ) {
-            $error_msgs[] = 'Email is not Valid';
+            $error_msgs[] = 'Email is not Valid.';
         }
         
+        if ( !fullNameIsValid($fullname) ) {
+            $error_msgs[] = 'Please enter your name.';
+        }
         
     }
     
-
+    
 
 
 ?>
@@ -31,7 +34,18 @@
         <meta charset="UTF-8">
         <title></title>
     </head>
-    <body>                   
+    <body>    
+        
+        <div class="error_message">
+            <?php
+            
+                if ( count($error_msgs) > 0 ) {
+                    echo $error_msgs[0];
+                }
+            
+            ?>
+        </div>
+        
         <form action="#" method="post">
             <fieldset>
                 <legend><h2>Add Comments</h2></legend>
