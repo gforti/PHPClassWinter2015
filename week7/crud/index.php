@@ -1,5 +1,6 @@
 <?php
 
+    include './functions.php';
     $error_msgs = array();
     $fullname = '';
     $email = '';
@@ -10,6 +11,11 @@
         $fullname = filter_input(INPUT_POST, 'fullname');
         $email = filter_input(INPUT_POST, 'email');
         $comments = filter_input(INPUT_POST, 'comments');
+        
+        
+        if ( !emailIsValid($email) ) {
+            $error_msgs[] = 'Email is not Valid';
+        }
         
         
     }
