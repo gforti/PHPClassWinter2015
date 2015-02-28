@@ -17,9 +17,10 @@
         if ( count($comments) == 0 ) {
             echo '<p>No comments</p>';
         }
-        echo '<table border="1">';
-         echo '<tr><th>Name</th><th>email</th><th>comments</th><th>phone</th><th></th><th></th></tr>';
         if ( count($comments) > 0 ) {
+            echo '<table border="1">';
+            echo '<tr><th>Name</th><th>email</th><th>comments</th><th>phone</th><th></th><th></th></tr>';
+                   
             foreach ($comments as $value) {
                 echo '<tr>';
                 echo '<td>',$value['name'] , '</td>';
@@ -30,8 +31,10 @@
                 echo '<td></td>';
                 echo '</tr>';
             }
+            
+             echo '</table>';
         }
-         echo '</table>';
+        
         ?>
     </body>
 </html>
