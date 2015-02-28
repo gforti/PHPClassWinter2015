@@ -26,7 +26,7 @@
         }
         
         if ( !phoneIsValid($phone) ) {
-            $error_msgs[] = 'Please enter your Phone number.';
+            $error_msgs[] = 'Please enter your Phone number in format xxx-xxx-xxxx.';
         }
         
         

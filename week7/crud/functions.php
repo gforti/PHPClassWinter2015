@@ -10,8 +10,8 @@ function emailIsValid( $email ) {
 
 
 function phoneIsValid( $phone ) {
-    
-     if ( is_numeric($phone) && !empty($phone) ) {
+    $pattern = '/^\(?([2-9]{1}[0-9]{2})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/';
+     if ( preg_match($pattern, $phone) ) {
         return true;
     } else {
         return false;
