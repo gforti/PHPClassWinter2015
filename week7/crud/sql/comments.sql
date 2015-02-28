@@ -31,6 +31,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `name` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   `comments` text COLLATE utf8_unicode_ci NOT NULL,
+  `phone` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
