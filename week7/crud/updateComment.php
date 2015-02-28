@@ -1,6 +1,11 @@
 <?php
+    include './functions.php';
     
     $id = filter_input(INPUT_POST, 'id');
+    
+    $comment = getComment($id);
+    
+    print_r($comment);
 ?>
 <!DOCTYPE html>
 <html>
