@@ -70,3 +70,17 @@ function addNewComments($fullname,$email,$comments,$phone) {
         return false;
     }     
 }
+
+
+function readAllComments(){
+    $results = array();
+    
+    $db = new PDO("mysql:host=localhost;dbname=phpclasswinter2015; port=3308;", "root", "");
+    $dbs = $db->prepare('select * from comments'); 
+    
+    if ( $dbs->execute() && $dbs->rowCount() > 0 ) {          
+        $results = $dbs->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
+    return $results;
+}
