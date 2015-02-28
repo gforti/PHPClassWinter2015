@@ -1,3 +1,8 @@
+<?php
+    include './functions.php';    
+    $comments = readAllComments();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,16 +13,9 @@
         <?php
         // put your code here
         
-    $db = new PDO("mysql:host=localhost;dbname=phpclasswinter2015; port=3308;", "root", "");
-    $dbs = $db->prepare('select * from comments'); 
-    
-      if ( $dbs->execute() && $dbs->rowCount() > 0 ) {
-          
-        $results = $dbs->fetchAll(PDO::FETCH_ASSOC);
-
-        
-        print_r($results);
-      }
+        if ( count($comments) == 0 ) {
+            echo '<p>No comments</p>';
+        }
         
         
         ?>
