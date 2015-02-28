@@ -98,3 +98,18 @@ function deleteComment( $id ) {
         return false;
     }
 }
+
+function getComment( $id ) {
+    $results = array();
+    
+    $db = new PDO("mysql:host=localhost;dbname=phpclasswinter2015; port=3308;", "root", "");
+    $dbs = $db->prepare('select * from comments where id = :id limit 1'); 
+    
+    $dbs->bindParam(':id', $id, PDO::PARAM_INT);
+    
+    if ( $dbs->execute() && $dbs->rowCount() > 0 ) {          
+        $results = $dbs->fetch(PDO::FETCH_ASSOC);
+    }
+    
+    return $results;
+}
