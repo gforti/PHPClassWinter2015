@@ -1,7 +1,12 @@
 <?php
+    // DO NOT FORGET TO INCULDE
     include './functions.php';
-    
-    $id = filter_input(INPUT_POST, 'id');    
+    /*
+     * it is important to make sure that we have the hidden
+     * id to make sure we are editing the correct ID
+     */
+    $id = filter_input(INPUT_POST, 'id');
+    // we add this to ensure that the input is made from this page
     $isupdated = filter_input(INPUT_POST, 'update');    
     
     $error_msgs = array();
