@@ -7,7 +7,7 @@
      */
     $id = filter_input(INPUT_POST, 'id');
     // we add this to ensure that the input is made from this page
-    $isupdated = filter_input(INPUT_POST, 'update');    
+    $isupdated = filter_input(INPUT_POST, 'action');    
     
     $error_msgs = array();
     $sucess_msg = '';
@@ -17,7 +17,12 @@
     $phone = '';
     $comments = '';
     
-    
+    /*
+     * Since a Post is always made in this situation
+     * We added a hidden action input to check
+     * if a value is posted from this page
+     * and not from the view page
+     */
     if ( !empty($_POST) && !empty($isupdated) ) {
         
         $fullname = filter_input(INPUT_POST, 'fullname');
@@ -82,7 +87,7 @@
             $comments = $comment["comments"];
                         
         }
-        print_r($comment);
+       // print_r($comment);
         
         ?>
         
@@ -118,8 +123,9 @@
                 
                 <!-- ######## IMPORTANT to keep ID alive ####---->
                 <input type="hidden" name="id" value="<?php echo $id; ?>" />
+                <input type="hidden" name="action" value="update" />
                 
-                <p> <input type="submit" name="update" value="Submit" /> </p>
+                <p> <input type="submit" value="Submit" /> </p>
             </fieldset>
         </form> 
         
