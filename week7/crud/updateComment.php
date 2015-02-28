@@ -4,7 +4,10 @@
     $id = filter_input(INPUT_POST, 'id');    
     $comment = getComment($id);
     
-    
+    $email = '';
+    $fullname = '';
+    $phone = '';
+    $comments = '';
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,6 +24,14 @@
             die();
         }
         
+        if ( count($comment) > 0) {
+        
+            $email = $comment["email"];
+            $fullname = $comment["name"];
+            $phone = $comment["phone"];
+            $comments = $comment["comments"];
+                        
+        }
         print_r($comment);
         
         ?>
