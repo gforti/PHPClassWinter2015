@@ -28,7 +28,7 @@
                 echo '<td>',$value['comments'] , '</td>';
                 echo '<td>',$value['phone'] , '</td>';
                 echo '<td></td>';
-                echo '<td></td>';
+                echo '<td><a href="deleteComment.php?id=',$value['id'],'">Delete</a></td>';
                 echo '</tr>';
             }
             
