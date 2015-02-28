@@ -11,7 +11,7 @@ function emailIsValid( $email ) {
 
 function phoneIsValid( $phone ) {
     $pattern = '/^\(?([2-9]{1}[0-9]{2})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/';
-     if ( preg_match($pattern, $phone) ) {
+     if ( preg_match($pattern, $phone) != 0 ) {
         return true;
     } else {
         return false;
