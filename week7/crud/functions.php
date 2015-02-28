@@ -84,3 +84,17 @@ function readAllComments(){
     
     return $results;
 }
+
+
+function deleteComment( $id ) {
+    $db = new PDO("mysql:host=localhost;dbname=phpclasswinter2015; port=3308;", "root", "");
+    $dbs = $db->prepare('delete from comments where id = :id'); 
+    
+    $dbs->bindParam(':id', $id, PDO::PARAM_INT);
+    
+    if ( $dbs->execute() && $dbs->rowCount() > 0 ) {          
+        return true;
+    } else {
+        return false;
+    }
+}
