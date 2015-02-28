@@ -6,6 +6,7 @@
     </head>
     <body>
         <?php
+            include './functions.php';
             $id = filter_input(INPUT_GET, 'id');        
             
             $isDeleted = deleteComment( $id );

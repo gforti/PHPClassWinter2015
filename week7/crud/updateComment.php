@@ -116,7 +116,9 @@
                 <p>Comments: (optional)</p>
                 <textarea name="comments" rows="4" cols="50"><?php echo $comments; ?></textarea>
                 
+                <!-- ######## IMPORTANT to keep ID alive ####---->
                 <input type="hidden" name="id" value="<?php echo $id; ?>" />
+                
                 <p> <input type="submit" name="update" value="Submit" /> </p>
             </fieldset>
         </form> 
