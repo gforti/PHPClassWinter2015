@@ -6,7 +6,17 @@
     </head>
     <body>
         <?php
-       
+        
+            if ( !empty($_POST) ) {
+                $passcode = filter_input(INPUT_POST, 'passcode');
+                
+                if ( $passcode === 'test' ) {
+                   header('Location: admin.php');
+                } else {
+                    echo 'incorrect passcode';
+                }
+            
+            }
         ?>
         
         <form method="post" action="#">            
