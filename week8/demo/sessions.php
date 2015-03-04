@@ -18,7 +18,7 @@
             $_SESSION['cart']['product1'] = 'mouse1';
             $_SESSION['cart']['product2'] = 'mouse2';
             
-            $_SESSION['loggedin'] = false;
+            $_SESSION['loggedin'] = true;
             
         ?>
     </body>
