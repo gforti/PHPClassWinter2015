@@ -6,11 +6,14 @@
     </head>
     <body>
         <?php
-        
+            session_start();
+            
+                   
             if ( !empty($_POST) ) {
                 $passcode = filter_input(INPUT_POST, 'passcode');
                 
                 if ( $passcode === 'test' ) {
+                   $_SESSION['loggedin'] = true;
                    header('Location: admin.php');
                 } else {
                     echo 'incorrect passcode';
