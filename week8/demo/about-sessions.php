@@ -36,7 +36,7 @@
          */
         
         $_SESSION['loggedin'] = true;
-        
+        $_SESSION['cart'] = array('item1', 'item2', 'item3');
         
         /*
          * It's a good practice to give the user a new session on 
