@@ -7,7 +7,7 @@
     <body>
         <?php
         /*
-         *  Session start is needed to start the session
+         * Session start is needed to start the session
          * and to get the key value pairs to put them 
          * into the super global $_SESSION
          * 
