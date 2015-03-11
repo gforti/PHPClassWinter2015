@@ -8,16 +8,18 @@
         <?php
          include './classes/Validation.class.php';
          include './classes/Messages.class.php';
+         include './classes/Util.class.php';
          
          $validate = new Validation();
          $messages = new Messages();
+         $util = new Util();
          
          $email = filter_input(INPUT_POST, 'email');
          $fullname = filter_input(INPUT_POST, 'fullname');
          
          
          
-         if ( !empty($_POST) ) {
+         if ( $util->isPost() ) {
              
              if ( !$validate->emailIsValid($email) ) {
                  $messages->addError('email is not valid');
@@ -27,10 +29,16 @@
                   $messages->addError('fullname is not valid');
              }
              
+             
+              if ( ! $messages->hasErrors()) {
+               $messages->displaySucessMsg('No Errors Nice Job');
+            }
+             
          }
          
             $messages->displayErrorMsgs();
         
+           
         ?>
         
         
