@@ -14,7 +14,7 @@ class Messages {
     } 
             
     public function displayErrorMsgs() {
-        if ( is_array($this->errors) && count($this->errors) > 0 ) {
+        if ( $this->hasErrors() ) {
            foreach ($this->errors as $err) {
              echo '<p>', $err, '</p>'; 
            }                    
@@ -26,6 +26,14 @@ class Messages {
        if ( is_string($msg) && !empty($msg) ) {
            echo '<h1>', $msg , '</h1>';
        }
+   }
+   
+   public function hasErrors() {
+        if ( count($this->errors) > 0 ) {
+            return true;
+        }  
+
+        return false;
    }
 
     
