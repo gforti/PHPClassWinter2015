@@ -6,10 +6,21 @@
     </head>
     <body>
         <?php
+        /*
+         * make sure you inculde the files on the page.
+         * We named the classes with Camel Case words.
+         * classname.class is not needed.  We just do this to know
+         * we are inculding class file.
+         */
          include './classes/Validation.class.php';
          include './classes/Messages.class.php';
          include './classes/Util.class.php';
          
+         
+         /*
+          * To access the class we create a  a variable  equal to a new instance
+          * of the class. $variables = new Class();
+          */
          $validate = new Validation();
          $messages = new Messages();
          $util = new Util();
@@ -18,7 +29,17 @@
          $fullname = filter_input(INPUT_POST, 'fullname');
          
          
-         
+         /*
+          * Notice to access the functions in the class
+          * we use the variable name with he arrow (->)
+          * and call the functions
+          * 
+          * $variable->function();
+          * 
+          * Whats great about classes is you can organize your code
+          * and allows you to write less code on your processing page.
+          * 
+          */
          if ( $util->isPost() ) {
              
              if ( !$validate->emailIsValid($email) ) {
